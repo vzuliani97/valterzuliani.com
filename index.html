@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="es" data-lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Valter Zuliani · Portafolio</title>
+<meta name="description" content="Valter Zuliani: ingeniero de software full stack, cloud, DevOps y seguridad en Medellín, Colombia. Proyectos, demos y experiencia.">
+<link rel="canonical" href="https://valterzuliani.com/">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://valterzuliani.com/">
+<meta property="og:title" content="Valter Zuliani · Portafolio">
+<meta property="og:description" content="Ingeniero de software full stack, cloud, DevOps y seguridad en Medellín, Colombia. Proyectos, demos y experiencia.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&amp;family=IBM+Plex+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<style>
+:root {
+  /* Layout: one reading column; projects sit two-up from 760px. Teal accent shared with the CVs. */
+  --bg: #f3f6f5;
+  --surface: #ffffff;
+  --ink: #0f1f1c;
+  --muted: #4c5f5b;
+  --line: #d3dfdb;
+  --accent: #0f766e;
+  --accent-ink: #ffffff;
+  --accent-soft: #e2f0ec;
+  --font-display: "IBM Plex Sans", "Helvetica Neue", Arial, sans-serif;
+  --font-body: "IBM Plex Sans", "Helvetica Neue", Arial, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+  --step--1: 0.84rem; --step-0: 1rem; --step-1: 1.2rem; --step-2: 1.5rem; --step-3: clamp(2rem, 7vw, 3rem);
+  --radius: 10px;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0c1413; --surface: #121e1c; --ink: #e4eeeb; --muted: #9db1ac; --line: #233431;
+    --accent: #3fb8a8; --accent-ink: #06201c; --accent-soft: #15302c; color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0c1413; --surface: #121e1c; --ink: #e4eeeb; --muted: #9db1ac; --line: #233431;
+  --accent: #3fb8a8; --accent-ink: #06201c; --accent-soft: #15302c; color-scheme: dark;
+}
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: var(--bg); color: var(--ink); font: 400 var(--step-0)/1.6 var(--font-body); }
+:root[data-lang="es"] body [lang="en"], :root[data-lang="en"] body [lang="es"] { display: none !important; }
+a { color: var(--accent); text-underline-offset: 3px; }
+a:focus-visible, button:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; border-radius: 6px; }
+.mono { font-family: var(--font-mono); }
+.wrap { width: min(100% - 32px, 980px); margin-inline: auto; }
+h1, h2, h3 { font-family: var(--font-display); text-wrap: balance; margin: 0; }
+
+/* header */
+.top { display: flex; justify-content: flex-end; padding-top: 16px; }
+.lang-toggle { display: inline-flex; border: 1px solid var(--line); border-radius: 999px; overflow: hidden; background: var(--surface); }
+.lang-toggle button { font: 500 var(--step--1) var(--font-mono); border: 0; background: transparent; color: var(--muted); padding: 6px 14px; cursor: pointer; }
+.lang-toggle button[aria-pressed="true"] { background: var(--accent); color: var(--accent-ink); }
+header.hero { padding: 20px 0 8px; display: grid; gap: 14px; }
+header.hero h1 { font-size: var(--step-3); font-weight: 700; letter-spacing: -0.02em; line-height: 1.05; }
+.role { font-size: var(--step-1); font-weight: 500; margin: 0; }
+.where { margin: 0; color: var(--muted); font-size: var(--step--1); font-family: var(--font-mono); }
+.actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 6px; }
+.btn { display: inline-flex; align-items: center; gap: 8px; min-height: 44px; padding: 10px 16px; border-radius: var(--radius);
+  border: 1px solid var(--line); background: var(--surface); color: var(--ink); font-weight: 600; text-decoration: none; cursor: pointer; font-size: var(--step-0); }
+.btn:hover { border-color: var(--accent); }
+.btn-primary { background: var(--accent); border-color: var(--accent); color: var(--accent-ink); }
+.btn svg { width: 18px; height: 18px; flex: none; }
+
+/* sections */
+section { padding: 28px 0 6px; }
+section > h2 { font: 600 var(--step--1)/1.2 var(--font-mono); letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent);
+  padding-bottom: 8px; border-bottom: 2px solid var(--accent); margin-bottom: 16px; }
+.summary p { max-width: 65ch; margin: 0; font-size: var(--step-1); line-height: 1.55; }
+.note { color: var(--muted); max-width: 65ch; margin: 0 0 14px; }
+
+/* demos */
+.demos { list-style: none; padding: 0; margin: 0; display: grid; gap: 12px; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
+.demo { display: grid; gap: 2px; padding: 16px; border-radius: var(--radius); background: var(--surface); border: 1px solid var(--line);
+  border-left: 4px solid var(--accent); text-decoration: none; color: var(--ink); height: 100%; }
+.demo:hover { border-color: var(--accent); }
+.demo-name { font-weight: 700; font-size: var(--step-1); }
+.demo-host { color: var(--accent); font-size: var(--step--1); }
+.demo-desc { color: var(--muted); font-size: var(--step--1); }
+
+/* projects */
+.grid { display: grid; gap: 16px; grid-template-columns: 1fr; }
+@media (min-width: 760px) { .grid { grid-template-columns: 1fr 1fr; } }
+.card { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; display: flex; flex-direction: column; }
+.media { aspect-ratio: 16 / 10; background: var(--accent-soft); border-bottom: 1px solid var(--line); }
+.media img { width: 100%; height: 100%; object-fit: cover; object-position: top left; display: block; max-width: 100%; }
+.stat-panel { height: 100%; display: grid; grid-template-columns: 1fr 1fr; align-content: center; gap: 8px 16px; padding: 20px; }
+.stat-panel div { display: grid; }
+.stat-panel b { font: 700 clamp(2.4rem, 9vw, 3.4rem)/1 var(--font-display); color: var(--accent); font-variant-numeric: tabular-nums; }
+.stat-panel span { color: var(--muted); font-size: var(--step--1); }
+.stat-panel p { grid-column: 1 / -1; margin: 6px 0 0; color: var(--muted); font-size: var(--step--1); }
+.card-body { padding: 16px 18px 18px; display: grid; gap: 8px; align-content: start; flex: 1; }
+.card h3 { font-size: var(--step-1); }
+.kicker { margin: 0; color: var(--accent); font-weight: 600; font-size: var(--step--1); }
+.desc { margin: 0; color: var(--ink); font-size: 0.95rem; }
+.chips { list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; gap: 6px; }
+.chips li { font: 500 0.78rem/1.2 var(--font-mono); padding: 5px 8px; border-radius: 6px; background: var(--accent-soft); color: var(--ink); }
+.links { margin: 4px 0 0; display: flex; flex-wrap: wrap; gap: 6px 16px; }
+.link { font-weight: 600; }
+.link::after { content: " \2197"; }
+
+
+/* experience, education */
+.timeline, .edu { list-style: none; padding: 0; margin: 0; display: grid; gap: 18px; }
+.job { padding-left: 16px; border-left: 2px solid var(--line); }
+.job h3, .edu h3 { font-size: var(--step-0); font-weight: 600; }
+.meta { margin: 2px 0 4px; color: var(--muted); font-size: var(--step--1); }
+.job p:last-child { margin: 0; max-width: 70ch; }
+.edu p { margin: 2px 0 0; }
+
+/* skills */
+.skills { display: grid; gap: 14px; }
+.skill-group h3 { font-size: var(--step--1); font-weight: 600; color: var(--muted); margin-bottom: 6px; }
+
+footer { margin: 36px 0 28px; padding-top: 16px; border-top: 1px solid var(--line); color: var(--muted); font-size: var(--step--1);
+  display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px; }
+@media (prefers-reduced-motion: no-preference) { .btn, .demo, .lang-toggle button { transition: border-color .15s, background .15s; } }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="top">
+    <div class="lang-toggle" role="group" aria-label="Idioma / Language">
+      <button type="button" data-set-lang="es" aria-pressed="true">ES</button>
+      <button type="button" data-set-lang="en" aria-pressed="false">EN</button>
+    </div>
+  </div>
+
+  <header class="hero">
+    <h1>Valter Zuliani</h1>
+    <p class="role"><span lang="es">Ingeniero de software · Full Stack, Cloud, DevOps y seguridad</span><span lang="en">Software Engineer · Full Stack, Cloud, DevOps &amp; Security</span></p>
+    <p class="where"><span lang="es">Medellín, Colombia · Inglés C1 · Disponible para trabajo remoto y reubicación internacional</span><span lang="en">Medellín, Colombia · English C1 · Open to remote work and international relocation</span></p>
+    <div class="actions">
+      <a class="btn btn-primary" href="https://linkedin.com/in/valter-zuliani-70152a97"><svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9.75h4v11H3zm7 0h3.8v1.6h.05c.53-1 1.84-2.05 3.78-2.05 4.04 0 4.79 2.66 4.79 6.12v5.33h-4v-4.72c0-1.13-.02-2.58-1.57-2.58-1.57 0-1.81 1.23-1.81 2.5v4.8H10z"/></svg>LinkedIn</a>
+      <a class="btn" href="https://github.com/vzuliani97"><svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M12 .5a11.5 11.5 0 0 0-3.64 22.41c.58.1.79-.25.79-.56v-2c-3.2.7-3.88-1.37-3.88-1.37-.52-1.33-1.28-1.69-1.28-1.69-1.04-.71.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.76 2.7 1.25 3.36.96.1-.75.4-1.25.73-1.54-2.56-.29-5.25-1.28-5.25-5.69 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.47.11-3.06 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.78 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.77.11 3.06.74.81 1.19 1.84 1.19 3.1 0 4.42-2.7 5.4-5.27 5.68.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.5 11.5 0 0 0 12 .5z"/></svg>GitHub</a>
+      <a class="btn" href="https://vzuliani97.github.io"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.6 3.8 5.6 3.8 9s-1.3 6.4-3.8 9c-2.5-2.6-3.8-5.6-3.8-9S9.5 5.6 12 3z"/></svg><span lang="es">Sitio web</span><span lang="en">Website</span></a>
+    </div>
+  </header>
+
+  <section class="summary" aria-labelledby="h-summary">
+    <h2 id="h-summary"><span lang="es">Perfil</span><span lang="en">Profile</span></h2>
+    <p><span lang="es">Ingeniero de software full stack con más de cuatro años de experiencia en Colombia y Australia. Construyo de punta a punta con TypeScript, Node.js, React y AWS, incluidos despliegue, monitoreo e incidentes en producción. Entregué apuestas en vivo, una API B2B segura y un sistema de facturación de uso diario.</span><span lang="en">Full-stack software engineer with over four years of experience in Colombia and Australia. Builds end to end with TypeScript, Node.js, React and AWS, including deployment, monitoring and production incidents. Shipped real-time sports betting, a secure B2B API and an invoicing system in daily use.</span></p>
+  </section>
+
+  <section aria-labelledby="h-demos">
+    <h2 id="h-demos"><span lang="es">Demos en vivo</span><span lang="en">Live demos</span></h2>
+    <p class="note"><span lang="es">Corren en hosting gratuito con datos ficticios; la primera carga puede tardar cerca de un minuto.</span><span lang="en">They run on free hosting with synthetic data; the first load can take about a minute.</span></p>
+    <ul class="demos"><li><a class="demo" href="https://yamesi.netlify.app/"><span class="demo-name">Yamesi Core</span><span class="demo-host mono">yamesi.netlify.app</span><span class="demo-desc"><span lang="es">Punto de venta, inventario y facturación de una joyería</span><span lang="en">Point of sale, inventory and invoicing for a jewelry store</span></span></a></li><li><a class="demo" href="https://nekobet.netlify.app/"><span class="demo-name">NekoBet</span><span class="demo-host mono">nekobet.netlify.app</span><span class="demo-desc"><span lang="es">Apuestas en vivo, casino y recargas; el tablero en vivo abre sin cuenta</span><span lang="en">Live betting, casino and top-ups; the live board opens without an account</span></span></a></li></ul>
+  </section>
+
+  <section aria-labelledby="h-projects">
+    <h2 id="h-projects"><span lang="es">Proyectos</span><span lang="en">Projects</span></h2>
+    <p class="note"><span lang="es">Proyectos propios basados en mi trabajo en cada empresa, sin código de empleadores; datos ficticios o públicos.</span><span lang="en">Independent projects based on the work done at each company, with no employer code; data is synthetic or public.</span></p>
+    <div class="grid">
+      <article class="card project">
+        <div class="media"><img src="img/yamesi-sell.jpg" width="960" height="667" decoding="async" alt="Punto de venta de Yamesi Core con las fotos del catálogo y el resumen de la venta" data-alt-en="Yamesi Core point of sale with catalog photos and the sale summary" data-alt-es="Punto de venta de Yamesi Core con las fotos del catálogo y el resumen de la venta"></div>
+        <div class="card-body">
+          <h3>Yamesi Core</h3>
+          <p class="kicker"><span lang="es">Punto de venta y facturación de extremo a extremo</span><span lang="en">Point of sale and invoicing, end to end</span></p>
+          <p class="desc"><span lang="es">Reconstrucción independiente del sistema de la joyería con NestJS, React y PostgreSQL: trazabilidad del oro, inventario, facturación, cierre diario y auditoría.</span><span lang="en">Independent rebuild of the jewelry store&#x27;s system with NestJS, React and PostgreSQL: gold traceability, inventory, invoicing, daily closing and an audit log.</span></p>
+          <ul class="chips" aria-label="Stack"><li>NestJS</li><li>React</li><li>PostgreSQL</li><li>Docker</li><li>GitHub Actions</li></ul>
+          <p class="links"><a class="link" href="https://github.com/vzuliani97/yamesi"><span lang="es">Código</span><span lang="en">Code</span></a><a class="link" href="https://yamesi.netlify.app/"><span lang="es">Demo en vivo</span><span lang="en">Live demo</span></a></p>
+        </div>
+      </article>
+      <article class="card project">
+        <div class="media"><img src="img/nekobet-betting.jpg" width="960" height="667" decoding="async" alt="NekoBet: apuestas en vivo con cuotas que se actualizan en tiempo real" data-alt-en="NekoBet: live betting with odds updating in real time" data-alt-es="NekoBet: apuestas en vivo con cuotas que se actualizan en tiempo real"></div>
+        <div class="card-body">
+          <h3>NekoBet</h3>
+          <p class="kicker"><span lang="es">Integridad transaccional y APIs B2B</span><span lang="en">Transaction integrity and B2B APIs</span></p>
+          <p class="desc"><span lang="es">Plataforma para puntos de venta (apuestas en vivo, casino y recargas desde un mismo saldo) con React, NestJS, TypeScript y PostgreSQL, ledger append-only e idempotencia obligatoria.</span><span lang="en">Point-of-sale platform (live sports bets, casino and top-ups from one balance) built with React, NestJS, TypeScript and PostgreSQL, with an append-only ledger and mandatory idempotency keys.</span></p>
+          <ul class="chips" aria-label="Stack"><li>React</li><li>NestJS</li><li>PostgreSQL</li><li>Server-Sent Events</li><li>HMAC-SHA256</li></ul>
+          <p class="links"><a class="link" href="https://github.com/vzuliani97/nekobet"><span lang="es">Código</span><span lang="en">Code</span></a><a class="link" href="https://nekobet.netlify.app/"><span lang="es">Demo en vivo</span><span lang="en">Live demo</span></a><a class="link" href="https://github.com/vzuliani97/nekobet/blob/main/docs/concurrency-experiment.md"><span lang="es">Experimento de concurrencia</span><span lang="en">Concurrency experiment</span></a></p>
+        </div>
+      </article>
+      <article class="card project">
+        <div class="media"><img src="img/opscircuit-grafana.jpg" width="960" height="667" decoding="async" alt="Panel de Grafana del laboratorio OpsCircuit" data-alt-en="Grafana dashboard from the OpsCircuit lab" data-alt-es="Panel de Grafana del laboratorio OpsCircuit"></div>
+        <div class="card-body">
+          <h3>OpsCircuit</h3>
+          <p class="kicker"><span lang="es">Laboratorio local de plataforma Kubernetes</span><span lang="en">Local Kubernetes platform lab</span></p>
+          <p class="desc"><span lang="es">Clúster kind local de 3 nodos con Argo CD (GitOps), Prometheus y Grafana; diseño AWS en Terraform (VPC, EKS, RDS, ECR) validado en CI pero nunca aplicado.</span><span lang="en">Local 3-node kind cluster with Argo CD (GitOps), Prometheus and Grafana; AWS design in Terraform (VPC, EKS, RDS, ECR) validated in CI but never applied.</span></p>
+          <ul class="chips" aria-label="Stack"><li>Kubernetes (kind)</li><li>Argo CD</li><li>Prometheus</li><li>Grafana</li><li>Terraform</li><li>Kyverno</li></ul>
+          <p class="links"><a class="link" href="https://github.com/vzuliani97/opscircuit"><span lang="es">Código</span><span lang="en">Code</span></a><a class="link" href="https://github.com/vzuliani97/opscircuit/blob/main/docs/incidents/2026-10-30-postmortem.md"><span>Postmortem</span></a></p>
+        </div>
+      </article>
+      <article class="card project">
+        <div class="media"><div class="stat-panel"><div><b>12</b><span lang="es">hallazgos corregidos</span><span lang="en">findings fixed</span></div><div><b>38</b><span lang="es">pruebas de ataque en CI</span><span lang="en">attack tests in CI</span></div><p class="mono">OWASP WSTG · CVSS 3.1</p></div></div>
+        <div class="card-body">
+          <h3>Applied Cyber Security</h3>
+          <p class="kicker"><span lang="es">Pruebas de seguridad de aplicaciones</span><span lang="en">Application security testing</span></p>
+          <p class="desc"><span lang="es">Prueba de penetración según OWASP WSTG de mis aplicaciones: 12 hallazgos corregidos y 38 pruebas de ataque en CI como regresión, más registro de riesgos y revisión de accesos.</span><span lang="en">OWASP WSTG penetration test of my own apps: 12 findings fixed and 38 attack tests in CI as regression tests, plus a risk register and an access review.</span></p>
+          <ul class="chips" aria-label="Stack"><li>OWASP WSTG</li><li>CVSS 3.1</li><li>node:test</li><li>GitHub Actions</li></ul>
+          <p class="links"><a class="link" href="https://github.com/vzuliani97/applied-cybersecurity"><span lang="es">Código</span><span lang="en">Code</span></a><a class="link" href="https://github.com/vzuliani97/applied-cybersecurity/tree/main/findings"><span lang="es">Hallazgos</span><span lang="en">Findings</span></a></p>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section aria-labelledby="h-exp">
+    <h2 id="h-exp"><span lang="es">Experiencia profesional</span><span lang="en">Professional Experience</span></h2>
+    <ul class="timeline">
+        <li class="job">
+          <h3><span lang="es">Full Stack Developer | Joyería Yamesi</span><span lang="en">Full Stack Developer | Yamesi Jewelry</span></h3>
+          <p class="meta mono"><span lang="es">Medellín, Colombia · May. 2020 – Actualidad · Empleado hasta dic. 2022; prestación de servicios desde 2023</span><span lang="en">Medellín, Colombia · May 2020 – Present · Employee until Dec 2022; contractor since 2023</span></p>
+          <p><span lang="es">Propuse y desarrollé el sistema contable y de facturación de la joyería, que reemplazó Excel y recibos en papel para el oro, el inventario y la facturación.</span><span lang="en">Proposed and built the jewelry store&#x27;s accounting and invoicing system, replacing spreadsheets and paper receipts for gold, inventory and invoicing.</span></p>
+        </li>
+        <li class="job">
+          <h3><span>Junior DevOps Engineer | The Big Group</span></h3>
+          <p class="meta mono"><span lang="es">Sídney, Australia · Oct. 2024 – Abr. 2026 · Tiempo parcial (24 h/semana) · Equipo internacional, en inglés</span><span lang="en">Sydney, Australia · Oct 2024 – Apr 2026 · Part-time (24 h/week) · International team, in English</span></p>
+          <p><span lang="es">Apoyé el despliegue y mantenimiento de servicios en AWS para pagos, operaciones digitales y hospitalidad sobre Kubernetes (EKS), ECS/Fargate y Lambda, con Helm, ECR, API Gateway y RDS.</span><span lang="en">Supported the deployment and maintenance of AWS services for payments, digital operations and hospitality on Kubernetes (EKS), ECS/Fargate and Lambda, with Helm, ECR, API Gateway and RDS.</span></p>
+        </li>
+        <li class="job">
+          <h3><span lang="es">Desarrollador de Programación (Full Stack / Cloud) | Código Digital Codi S.A.S.</span><span lang="en">Software Developer (Full Stack / Cloud) | Código Digital Codi S.A.S.</span></h3>
+          <p class="meta mono"><span lang="es">Medellín, Colombia · Oct. 2021 – Feb. 2023</span><span lang="en">Medellín, Colombia · Oct 2021 – Feb 2023</span></p>
+          <p><span lang="es">Trabajé en la integración de apuestas deportivas y casino en tiempo real de un portal para puntos de venta.</span><span lang="en">Worked on the real-time sports betting and casino integration of a point-of-sale portal.</span></p>
+        </li>
+        <li class="job">
+          <h3><span>Software Developer | LaCompay Colombia</span></h3>
+          <p class="meta mono"><span lang="es">Medellín, Colombia · Nov. 2020 – Abr. 2021</span><span lang="en">Medellín, Colombia · Nov 2020 – Apr 2021</span></p>
+          <p><span lang="es">Participé en el desarrollo de funcionalidades en C++ de una pasarela de pagos, con énfasis en el procesamiento transaccional.</span><span lang="en">Contributed to C++ features of a payment gateway, focused on transaction processing.</span></p>
+        </li>
+    </ul>
+  </section>
+
+  <section aria-labelledby="h-skills">
+    <h2 id="h-skills"><span lang="es">Habilidades técnicas</span><span lang="en">Technical Skills</span></h2>
+    <div class="skills"><div class="skill-group"><h3><span lang="es">Desarrollo</span><span lang="en">Development</span></h3><ul class="chips"><li>TypeScript</li><li>JavaScript</li><li>Node.js</li><li>NestJS</li><li>Express</li><li>React</li><li>Angular</li><li>PHP</li><li>PostgreSQL</li><li>MySQL</li><li>MongoDB</li><li><span lang="es">APIs REST</span><span lang="en">REST APIs</span></li></ul></div><div class="skill-group"><h3><span>Amazon Web Services (AWS)</span></h3><ul class="chips"><li>EC2</li><li>Lambda</li><li>ECS/Fargate</li><li>EKS</li><li>ECR</li><li>S3</li><li>RDS</li><li>DynamoDB</li><li>API Gateway</li><li>Load Balancer (ALB/ELB)</li><li>Route 53</li><li>CloudFront</li><li>VPC</li><li>IAM</li><li>CloudWatch</li></ul></div><div class="skill-group"><h3><span>DevOps</span></h3><ul class="chips"><li>Docker</li><li>Kubernetes</li><li>Helm</li><li>Terraform</li><li>GitHub Actions</li><li>GitLab CI/CD</li><li>Datadog</li><li>ELK</li><li>Linux</li></ul></div><div class="skill-group"><h3><span lang="es">Seguridad</span><span lang="en">Security</span></h3><ul class="chips"><li>OWASP WSTG</li><li>CVSS 3.1</li><li>CodeQL (SAST)</li><li>OWASP ZAP (DAST)</li><li>Trivy</li><li>Gitleaks</li><li>Kyverno</li><li>IAM</li></ul></div></div>
+  </section>
+
+  <section aria-labelledby="h-edu">
+    <h2 id="h-edu"><span lang="es">Educación</span><span lang="en">Education</span></h2>
+    <ul class="edu"><li><h3><span lang="es">Ingeniería de Sistemas</span><span lang="en">Bachelor&#x27;s Degree in Systems Engineering (Ingeniería de Sistemas)</span></h3><p class="meta mono"><span lang="es">Universidad de Medellín, Colombia · 2018 – 2023 · Título otorgado en abril de 2023</span><span lang="en">Universidad de Medellín, Colombia · 2018 – 2023 · Degree awarded April 2023</span></p></li><li><h3><span>Advanced Diploma of Information Technology (Cyber Security), ICT60220</span></h3><p class="meta mono"><span lang="es">ACBI, Sídney · Cualificación formal del Australian Qualifications Framework (AQF), nivel 6 · 2024 – 2026</span><span lang="en">ACBI, Sydney · Formal qualification, Australian Qualifications Framework (AQF) Level 6 · 2024 – 2026</span></p></li><li><h3><span lang="es">General English Program (nivel C1)</span><span lang="en">General English Program (C1 level)</span></h3><p class="meta mono"><span lang="es">Victory Institute, Sídney, Australia · 2023 – 2024</span><span lang="en">Victory Institute, Sydney, Australia · 2023 – 2024</span></p></li>
+      <li><h3><span lang="es">Idiomas</span><span lang="en">Languages</span></h3><p class="meta mono"><span lang="es">Español (nativo) · Italiano (nativo) · Inglés (C1)</span><span lang="en">Spanish (native) · Italian (native) · English (C1)</span></p></li>
+    </ul>
+  </section>
+
+  <footer>
+    <span><span lang="es">Actualizado en noviembre de 2026</span><span lang="en">Updated November 2026</span></span>
+    <span><a href="https://linkedin.com/in/valter-zuliani-70152a97">LinkedIn</a> · <a href="https://github.com/vzuliani97">GitHub</a> · <a href="https://vzuliani97.github.io">vzuliani97.github.io</a></span>
+  </footer>
+</div>
+<script>
+(function () {
+  var root = document.documentElement;
+  var TITLES = { es: "Valter Zuliani · Portafolio", en: "Valter Zuliani · Portfolio" };
+  function setLang(l) {
+    root.setAttribute("data-lang", l);
+    root.setAttribute("lang", l);
+    document.title = TITLES[l];
+    document.querySelectorAll("[data-set-lang]").forEach(function (b) {
+      b.setAttribute("aria-pressed", String(b.getAttribute("data-set-lang") === l));
+    });
+    document.querySelectorAll("img[data-alt-es]").forEach(function (img) {
+      img.alt = img.getAttribute(l === "en" ? "data-alt-en" : "data-alt-es");
+    });
+    try { localStorage.setItem("vz-lang", l); } catch (e) {}
+  }
+  var lang = "es";
+  try {
+    var saved = localStorage.getItem("vz-lang");
+    if (saved === "es" || saved === "en") lang = saved;
+    else if (!/^es/i.test(navigator.language || "es")) lang = "en";
+  } catch (e) {
+    if (!/^es/i.test(navigator.language || "es")) lang = "en";
+  }
+  setLang(lang);
+  document.querySelectorAll("[data-set-lang]").forEach(function (b) {
+    b.addEventListener("click", function () { setLang(b.getAttribute("data-set-lang")); });
+  });
+
+})();
+</script>
+</body>
+</html>
