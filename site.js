@@ -1,14 +1,15 @@
 
-(function(){var b=document.body,k="vz-lang",l,$=function(q,r){return [].slice.call((r||document).querySelectorAll(q))};
+(function(){var b=document.body,k="vz-lang-choice",l,$=function(q,r){return [].slice.call((r||document).querySelectorAll(q))};
+/* English by default; Spanish only when the visitor picks it. */
 try{l=localStorage.getItem(k)}catch(e){}
-if(!l){l=(navigator.language||"es").toLowerCase().indexOf("es")===0?"es":"en"}
+if(l!=="es"&&l!=="en"){l="en"}
 function set(x){l=x;b.setAttribute("data-lang",x);document.documentElement.lang=x;
  $(".langbar button").forEach(function(n){n.setAttribute("aria-pressed",n.value===x)});
  $(".navlinks a").forEach(function(a){a.textContent=a.getAttribute("data-"+x)});
  if(b.hasAttribute("data-home")){document.title=x==="es"?"Valter Zuliani · Ingeniero de Software":"Valter Zuliani · Software Engineer"}
- try{localStorage.setItem(k,x)}catch(e){}}
+ var sk=document.querySelector(".skip");if(sk){var mainId=sk.getAttribute("href").replace(/-(es|en)$/,"-"+x);sk.setAttribute("href",mainId);sk.textContent=x==="es"?"Saltar al contenido":"Skip to content"}}
 set(l);
-$(".langbar button").forEach(function(n){n.addEventListener("click",function(){set(n.value)})});
+$(".langbar button").forEach(function(n){n.addEventListener("click",function(){set(n.value);try{localStorage.setItem(k,n.value)}catch(e){}})});
 $(".navlinks a").forEach(function(a){a.addEventListener("click",function(e){e.preventDefault();
  var t=document.getElementById(a.getAttribute("href").slice(1)+"-"+l);if(t){t.scrollIntoView()}})});
 var bar=document.querySelector(".progress i"),top=document.querySelector(".totop");
